@@ -63,4 +63,9 @@ def serialize_json(obj):
             obj = obj - obj.utcoffset()
         millis = int(calendar.timegm(obj.timetuple()) * 1000 + obj.microsecond / 1000)
         return millis
-    return str(obj)
+    try:
+        return str(obj)
+    except:
+        print("UNICODE ERROR, DATA TO BE UPDATED MANUALLY")
+        return
+    

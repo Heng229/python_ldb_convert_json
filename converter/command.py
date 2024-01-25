@@ -139,7 +139,6 @@ def process_file(source_dir: str, dest_dir: str, no_check_crc: bool, filename: s
             data_dict = get_dest_dict(ds_entity.key(), json_tree)
             data_dict.update(data)
             
-    print(set(json_tree['listings']['2110132144505785504'].keys()))
     out_file_path = os.path.join(dest_dir, filename + ".json")
     with open(out_file_path, "w", encoding="utf8") as out:
         out.write(
